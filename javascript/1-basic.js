@@ -69,5 +69,5 @@
 
 */
 
-	// With dot operator (string.property) you can call a property of the string or variable.
+	// With dot operator (string.property) you can call a property of a variable or string.
 	console.log('Hello'.length);
