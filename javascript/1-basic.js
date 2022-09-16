@@ -67,7 +67,7 @@
 	toUpperCase()		Returns a string converted to uppercase letters
 	trim()				Returns a string with removed whitespaces
 	trimEnd()			Returns a string with removed whitespaces from the end
-	trimStart()			Returns a string with removed whitespaces fropm the start
+	trimStart()			Returns a string with removed whitespaces from the start
 	valueOf()			Returns the primitive value of a string or a string object
 
 */
