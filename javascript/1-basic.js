@@ -23,7 +23,7 @@
 		Example:
 		let varName = 'Hello, ';
 		varName += 'World.';
-		console.log(varName);			// Prints "Hello, World."
+		console.log(varName);	// Prints "Hello, World."
 
 */
 
