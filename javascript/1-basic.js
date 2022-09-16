@@ -27,6 +27,7 @@
 
 */
 
+
 /*	DATA TYPES
 
 	Number:		5
@@ -36,6 +37,7 @@
 
 */
 
+
 // STRING CONCATENATIONS
 
 	// Use <+> between <'> to append the strings.
@@ -44,6 +46,7 @@
 	// Use <`> to insert a string. It's possible to include variables <${varName}> without breaking the string in blocks.
 	let varName = 'World';
 	console.log(`Hello, ${varName}.`);	// Prints "Hello, World."
+
 
 
 /*	METHOD AND PROPERTIES
@@ -71,6 +74,7 @@
 
 	// With dot operator (string.property) you can call a property of a variable or string.
 	console.log('Hello'.length);
+
 
 
 /* BUILT-IN OBJECTS
