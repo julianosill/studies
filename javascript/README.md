@@ -1,2 +1,2 @@
 # Javascript
-Here is my journey learning about Javascript. I've been documenting everything that I find that it's important to be documented for me.
+Here is my journey learning Javascript. I've been documenting everything I find important to be documented.
