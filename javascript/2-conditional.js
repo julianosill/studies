@@ -40,7 +40,7 @@
 	&&				AND operator
 	||				OR operator
 	!				NOT operator
-	FALSY values: 	0, "" or '', null, undefined, Nan (Not a Number)
+	FALSY values 	0, "" or '', null, undefined, Nan (Not a Number)
 
 	Syntax:
 
@@ -74,7 +74,9 @@
 
 	It's a short-hand syntax to simplify condition statements.
 
-	varName ? <if method> : <else method>;
+	Syntax:
+
+		varName ? <if method> : <else method>;
 
 		- The condition is provided before the <?>.
 		- A colon <:> separates the expressions.
@@ -88,3 +90,36 @@
 	let dayTime = true;
 
 	dayTime ? console.log("It's day time.") : console.log("It's night time.");
+
+
+
+/*	SWITCH KEYWORD
+
+	Syntax:
+
+		switch (varName) {
+			case 'value':			Check the value of the variable.
+				<method here>;		Runs the method.
+				break;				Must declare <break> to stop the code when the condition is met. If not declared, the code will run until reaches the <default>.
+			default:				<default> will run when any other condition is met.
+				<method here>;
+				break;
+		}
+
+*/
+
+		// Example 5:
+
+		let juice = 'orange';
+
+		switch (juice) {
+			case 'orange':
+				console.log("Example 5: I'd like an orange juice.");
+				break;
+			case 'apple':
+				console.log("I'd like an apple juice.");
+				break;
+			default:
+				console.log("I'd like a cup of water.");
+				break;
+		}
