@@ -87,3 +87,22 @@
 			}
 
 			console.log('Example 4: ' + overSize(200));
+
+
+
+/*	ARROW FUNCTIONS
+
+		A shorter way to write functions without using <function> every time.
+
+		Syntax:
+			
+			const varName = (paramOne, paramTwo) => {
+			}
+
+*/
+
+			// Example 5:
+			const exampleFive = (param) => {
+				return 'Example 5: ' + param;
+			}
+			console.log(exampleFive(15));
