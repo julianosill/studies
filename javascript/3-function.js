@@ -6,7 +6,7 @@
 			<method here>;
 		}
 
-		funcName(parameterValue);							Call the function.
+		funcName(parameterValue);			Call the function.
 	
 */
 
@@ -83,7 +83,7 @@
 			}
 
 			function overSize(kg) {
-				return convertToKg(kg) * 1.5;			// Get the parameter's value (200), runs the <convertToKg> function and then multiply the result by 1.5.
+				return convertToKg(kg) * 1.5;		// Get the parameter's value (200), runs the <convertToKg> function and then multiply the result by 1.5.
 			}
 
 			console.log('Example 4: ' + overSize(200));
