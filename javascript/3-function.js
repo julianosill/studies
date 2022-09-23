@@ -128,3 +128,9 @@
 										const result = number * 2;
 										return result;	// return statement
 									}
+
+	*/
+
+		// Example 6:
+		const multiplyByThree = number => number * 3;
+		console.log('Example 6: ' + multiplyByThree(3));
