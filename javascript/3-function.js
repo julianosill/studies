@@ -61,19 +61,19 @@
 	
 /*	HELPER FUNCTIONS
 
-		A function can be created inside another one to make it easier to read and debug. This function can be called "Helper function".
+	A function can be created inside another one to make it easier to read and debug. This function can be called "Helper function".
 
-		Syntax:
+	Syntax:
 
-			function firstCalc(number) {
-				return number * 2;
-			}
+		function firstCalc(number) {
+			return number * 2;
+		}
 
-			function secondCalc(newNumber) {
-				return firstCalc(newNumber) + 50;
-			}
+		function secondCalc(newNumber) {
+			return firstCalc(newNumber) + 50;
+		}
 
-			secondCalc(20);		It'll duplicate the value (20) in the first function and then add 50 as it's declared in the second function.
+		secondCalc(20);		It'll duplicate the value (20) in the first function and then add 50 as it's declared in the second function.
 
 */
 
@@ -92,12 +92,12 @@
 
 /*	ARROW FUNCTIONS
 
-		A shorter way to write functions without using <function> every time.
+	A shorter way to write functions without using <function> every time.
 
-		Syntax:
+	Syntax:
 			
-			const varName = (paramOne, paramTwo) => {
-			}
+		const varName = (paramOne, paramTwo) => {
+		}
 
 */
 
@@ -106,3 +106,25 @@
 				return 'Example 5: ' + param;
 			}
 			console.log(exampleFive(15));
+
+
+	/*	CONCISE BODY
+			
+		It's the most condensed form of the function.
+
+
+		Functions that has only one parameter do not need the parameter in parantheses. But if it has none or multiple, parentheses are required.
+		
+		Zero parameters				const funcName = () => {};
+		One parameter				const funcName = paramOne => {};
+		Two or more parameters		const funcName = (paramOne, paramTwo) => {};
+
+
+		Functions with single-line block don't need curly braces. <return> is not need as well, this is referred to as "implicit return".
+		
+		Single-line block			const duplicate = number => number * 2;
+		
+		Multi-line block			const duplicate = number => {
+										const result = number * 2;
+										return result;	// return statement
+									}
