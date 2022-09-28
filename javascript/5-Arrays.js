@@ -5,7 +5,7 @@
 
 	Syntax:
 
-		const arrayName = [ 1, 'two', true ];
+		arrayName = [ 1, 'two', true ];
 
 	Accessing syntax:
 
@@ -19,6 +19,7 @@
 	console.log('Example 1.1: ' + cars[1]);			// Returns the second value.
 	cars[2] = 'Fiat Tippo';							// Update the third element to "Fiat Tippo";
 	console.log('Example 1.2: ' + cars);
+
 
 
 /*	PROPERTIES
@@ -48,3 +49,27 @@
 	.valueOf()			Returns the value of all the elements of the original array.
 
 */
+
+	// Example 2:
+	const brands = [ 'Honda', 'Suzuki', 'Yamaha'];
+
+	const addBrands = array => brands.push(array);		// Create a function <addBrands> which adds a new element in <brands>.
+	addBrands('Kawasaki');
+	console.log('Example 2: ' + brands);
+
+
+/*	NESTED ARRAYS
+
+	When an array contains another array inside it's known as a "nested array".
+
+	Syntax:
+
+		arrayName = [['item 1'], ['item 2.1', 'item 2.2']];
+
+		arrayName[1][0];
+
+*/
+
+	// Example 3:
+	const bikes = [['CB500f'], ['R3', 'R6', 'R1']];
+	console.log('Example 3: ' + bikes[1][2]);		// Returns "R1".
