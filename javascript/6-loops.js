@@ -19,6 +19,12 @@
 		}
 
 		// Example 2: Loop in reverse
-		for (let j = 20; j >= 10; j-=3) {				// <i> starts with number 2, then check if the condition is true (<i> is lower than 10). If yes, add 2 to the <i> and runs the loop again.
+		for (let j = 20; j >= 10; j-=3) {
 			console.log('Example 2: ' + j);
+		}
+
+		// Example 3: Loop with an array
+		const brands = ['Apple', 'Xiaomi', 'Huawei'];
+		for (let k = 0; k < brands.length; k++) {
+			console.log('Example 3: ' + brands[k]);
 		}
