@@ -17,3 +17,8 @@
 		for (let i = 2; i < 10; i+=2) {				// <i> starts with number 2, then check if the condition is true (<i> is lower than 10). If yes, add 2 to the <i> and runs the loop again.
 			console.log('Example 1: ' + i);
 		}
+
+		// Example 2: Loop in reverse
+		for (let j = 20; j >= 10; j-=3) {				// <i> starts with number 2, then check if the condition is true (<i> is lower than 10). If yes, add 2 to the <i> and runs the loop again.
+			console.log('Example 2: ' + j);
+		}
