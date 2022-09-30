@@ -15,16 +15,27 @@
 
 		// Example 1:
 		for (let i = 2; i < 10; i+=2) {				// <i> starts with number 2, then check if the condition is true (<i> is lower than 10). If yes, add 2 to the <i> and runs the loop again.
-			console.log('Example 1: ' + i);
+			console.log('Example 1 - ' + i);
 		}
 
 		// Example 2: Loop in reverse
 		for (let j = 20; j >= 10; j-=3) {
-			console.log('Example 2: ' + j);
+			console.log('Example 2 - ' + j);
 		}
 
 		// Example 3: Loop with an array
 		const brands = ['Apple', 'Xiaomi', 'Huawei'];
 		for (let k = 0; k < brands.length; k++) {
-			console.log('Example 3: ' + brands[k]);
+			console.log('Example 3 - ' + brands[k]);
+		}
+
+		// Example 4: Loop with nested loops
+		const varArrayOne = [2, 4, 8];
+		const varArrayTwo = [2, 6, 12];
+		for (let l = 0; l < varArrayOne.length; l++) {
+			for (let m = 0; m < varArrayTwo.length; m++) {
+				if(varArrayOne[l] === varArrayTwo[m]) {
+					console.log('Example 4 - Both arrays have this number in common: ' + varArrayTwo[m]);
+				}
+			}
 		}
