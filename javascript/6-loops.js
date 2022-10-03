@@ -29,7 +29,7 @@
 			console.log('Example 3 - ' + brands[k]);
 		}
 
-		// Example 4: Loop with nested loops
+		// Example 4: Nested loops
 		const varArrayOne = [2, 4, 8];
 		const varArrayTwo = [2, 6, 12];
 		for (let l = 0; l < varArrayOne.length; l++) {
@@ -39,3 +39,16 @@
 				}
 			}
 		}
+
+
+
+/*	Loop <while>
+
+	The <while> loop creates a loop that is executed while the condition is met. The lopp will stop when the condition evaluates to false.
+
+	Syntax:
+
+		while(condition) {
+		}
+
+*/
