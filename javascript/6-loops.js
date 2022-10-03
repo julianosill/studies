@@ -60,3 +60,23 @@
 			currentElement = element[Math.floor(Math.random() * 4)];
 			console.log('Example 5: ' + currentElement);
 		}
+
+
+
+/*	Loop <do>...<while>
+
+	The code block will run at least once and then loop according to the condition.
+
+	Syntax:
+
+		do {
+		} while ();
+
+*/
+
+		// Example 6:
+		let number = 0;
+		do {
+			console.log('Example 6: ' + number);
+			number++;
+		} while(number < 4);
