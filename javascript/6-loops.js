@@ -52,3 +52,11 @@
 		}
 
 */
+
+		// Example 5:
+		const element = ['earth', 'wind', 'fire', 'water'];
+		let currentElement;
+		while(currentElement !== 'fire') {
+			currentElement = element[Math.floor(Math.random() * 4)];
+			console.log('Example 5: ' + currentElement);
+		}
