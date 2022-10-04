@@ -152,3 +152,24 @@
 		readableFunction();												Calls the function using a new variable that's more readable.
 
 */
+
+
+/*	FUNCTION AS PARAMETER
+
+	A higher-order function is a function that either accepts functions as parameters, returns a function or both.
+	We call functions that get passed in as parameters <callback functions>.
+	Callback functions get invoked during the execution of the higher-order function.
+
+	Syntax:
+
+		const higherOrderFunction = param => {
+			param();
+		}
+
+		const callbackFunction = () => {
+			return "I'm a callback function."
+		}
+
+		higherOrderFunction(callbackFunction);		Calls the Higher Order Function using the Callback Function as a paremeter.
+
+*/
