@@ -22,7 +22,7 @@
 
 
 
-/*	PROPERTIES
+/*	PROPERTIES and METHODS
 
 	.concat()			Merges (or concatenates) two or more arrays.
 	.filter()			Creates a new array with all elements that pass the test from the provided function.
