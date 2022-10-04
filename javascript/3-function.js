@@ -134,3 +134,21 @@
 		// Example 6:
 		const multiplyByThree = number => number * 3;
 		console.log('Example 6: ' + multiplyByThree(3));
+
+
+
+/*	FUNCTION AS DATA
+
+	It's possible to create a variable and assign an existing function to it. It makes easier to repeat a function which has a confusing or very long name multiple times without change the original source.
+	In JavaScript, functions are first class objects and can have properties and methods, such as <.length>, <.name> and on.
+
+	Syntax:
+		
+		const aVeryLongAndAnnoyingFunctinName = () => {
+			code here;
+		}
+		const readableFunction = aVeryLongAndAnnoyingFunctinName;		Notice it's assigned the name of the function without <()> as we want to assign the function itself and not the returned value of the function.
+
+		readableFunction();												Calls the function using a new variable that's more readable.
+
+*/
