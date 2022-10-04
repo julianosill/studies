@@ -80,3 +80,20 @@
 			console.log('Example 6: ' + number);
 			number++;
 		} while(number < 4);
+
+
+
+/*	The <break> keyword
+
+		The <break> exits the loop immediately when a specific assigned for it is met.
+
+		Syntax:
+
+			for (let i = 0; i < 99; i++) {
+				if (i > 3) {
+					break;
+				}
+				console.log(i);		Print 3.
+			}
+
+*/
