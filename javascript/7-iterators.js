@@ -4,11 +4,13 @@
 
 	Some examples:
 
-		.forEach()		Loops through the array and executes the code for each element.
-		.map()			Creates a new array with the results of calling a function for every element in array.
-		.filter()		Creates a new array with elements that pass the condition.
-		.join()			Converts the elements of an array to strings and concatenated together, returning the resulting string.
-		.findIndex()	Returns the first index that passes the test.
+		.forEach()									Loops through the array and executes the code for each element.
+		.map()										Creates a new array with the results of calling a function for every element in array.
+		.filter()									Creates a new array with elements that pass the condition.
+		.join()										Converts the elements of an array to strings and concatenated together, returning the resulting string.
+		.findIndex()								Returns the first index that passes the test.
+		.reduce((accumulator, currentValue))		Combines each element of an array, using a specified reducer function, and returns a single value.
+													<accumulator> is the returned value from the function, <currentValue> is the element being iterated over.
 
 */
 
@@ -41,3 +43,8 @@
 		return name === 'Dave';
 	});
 	console.log('Example 5: ' + findDave);
+
+	// Example 6 - .reduce():
+	const num = [1, 2, 3, 4];
+	const sumNum = num.reduce((acc, currVal) => acc + currVal, 5);		// The number after <,> is a value which the reduce() starts at (optional). In this case, it'll start at 5.
+	console.log('Example 6: ' + sumNum);
