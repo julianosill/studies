@@ -8,6 +8,7 @@
 		.map()			Creates a new array with the results of calling a function for every element in array.
 		.filter()		Creates a new array with elements that pass the condition.
 		.join()			Converts the elements of an array to strings and concatenated together, returning the resulting string.
+		.findIndex()	Returns the first index that passes the test.
 
 */
 
@@ -33,3 +34,10 @@
 	const animals = ['Hen', 'elephant', 'llama', 'leopard', 'ostrich', 'Whale', 'octopus', 'rabbit', 'lion', 'dog'];
 	const secretMessage = animals.map(animals => animals[0]);
 	console.log('Example 4: ' + secretMessage.join(''));
+
+	// Example 5:
+	const names = ['John', 'Dave', 'Lily'];
+	const findDave = names.findIndex((name) => {
+		return name === 'Dave';
+	});
+	console.log('Example 5: ' + findDave);
