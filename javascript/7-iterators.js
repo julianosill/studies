@@ -11,6 +11,7 @@
 		.findIndex()								Returns the first index that passes the test.
 		.reduce((accumulator, currentValue))		Combines each element of an array, using a specified reducer function, and returns a single value.
 													<accumulator> is the returned value from the function, <currentValue> is the element being iterated over.
+		.some()										Tests whether at least one element in the array passes the test implemented by the provided function. It returns true or false.
 
 */
 
@@ -44,7 +45,13 @@
 	});
 	console.log('Example 5: ' + findDave);
 
-	// Example 6 - .reduce():
+	// Example 6 - .reduce():		In this example, the function will sum 1 + 2, then sum 3 (result of the first sum) + 3 and 6 (result of second sum) + 4.
 	const num = [1, 2, 3, 4];
 	const sumNum = num.reduce((acc, currVal) => acc + currVal, 5);		// The number after <,> is a value which the reduce() starts at (optional). In this case, it'll start at 5.
 	console.log('Example 6: ' + sumNum);
+
+	// Example 7 - .some():		Return <true> if the array has a country with a name equal or larger then 4 letters.
+	const countries = ['Brazil', 'Cuba', 'Argentina', 'Oman'];
+	console.log(countries.some((countryName) => {
+		return countryName.length <= 4;
+	}));
