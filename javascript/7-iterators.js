@@ -4,14 +4,15 @@
 
 	Some examples:
 
-		.forEach()									Loops through the array and executes the code for each element.
-		.map()										Creates a new array with the results of calling a function for every element in array.
-		.filter()									Creates a new array with elements that pass the condition.
-		.join()										Converts the elements of an array to strings and concatenated together, returning the resulting string.
+		.forEach()									Loops through the array and executes the code for each element. It returns <undefined> as well.
+		.map()										Returns a new array with the results of calling a function for every element in array.
+		.filter()									Returns a new array with elements that pass the condition.
+		.join()										Converts the elements of an array to strings and concatenates together, returning the resulting string.
 		.findIndex()								Returns the first index that passes the test.
 		.reduce((accumulator, currentValue))		Combines each element of an array, using a specified reducer function, and returns a single value.
 													<accumulator> is the returned value from the function, <currentValue> is the element being iterated over.
-		.some()										Tests whether at least one element in the array passes the test implemented by the provided function. It returns true or false.
+		.some()										Tests whether at least one element in the array passes the test implemented by the provided function. It returns a boolean value (true or false).
+		.every()									Similar to <.some()>, but returns true if only every element passes the test.
 
 */
 
