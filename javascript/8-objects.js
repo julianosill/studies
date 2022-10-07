@@ -15,10 +15,11 @@
 		Dot notation		=>	objectName.key;				Returns 'value'.
 		Bracket notation	=>	objectName['Key Name'];		Returns 'value.
 
-	Assigning and update/change properties:
+	Assigning, update/change and delete properties:
 
 		objectName.key = 'new value';		Updates the value of the key.
-		objectName.newKey = 'value';		Assign a new key and its value to the object.
+		objectName.newKey = 'value';		Assigns a new key and its value to the object.
+		delete objectName.key;				Deletes the key.
 
 */
 
@@ -29,5 +30,12 @@
 		'Fuel Type': 'Gas',
 	}
 	
-	bike.brand;				// Returns 'Triumph'.
-	bike['Fuel Type'];		// Returns 'Gas'.
+	bike.brand;						// Returns 'Triumph'.
+	bike['Fuel Type'];				// Returns 'Gas'.
+	console.log(bike);
+
+	bike.motorSize = '900cc';		// Assigns <motorSize> as a new key and '900cc' as its value.
+	delete bike['Fuel Type'];		// Deletes <Fuel Type> key.
+	console.log(bike);
+
+	
