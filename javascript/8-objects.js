@@ -50,4 +50,19 @@
 	console.log(bike);
 	bike.roar();
 
-	
+	// Example 2 - Nested Objects
+	let car = {
+		engine: {
+			size: '1.6L',
+			power: '100hp'
+		},
+		dimension: {
+			weight: '1.5t',
+			passengers: '5'
+		},
+		'Color Palette': {
+			outsize: 'Dark silver',
+			inside: 'Light silver'
+		}
+	}
+	console.log(car['Color Palette'].inside);		// Returns 'Light silver'.
