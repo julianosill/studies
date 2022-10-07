@@ -66,3 +66,6 @@
 		}
 	}
 	console.log(car['Color Palette'].inside);		// Returns 'Light silver'.
+	car.model = {type: 'Hatch', year: 2007};		// Adds another object <model> with properties <type> and <year>.
+	console.log(car);
+	console.log(car.model.year);
