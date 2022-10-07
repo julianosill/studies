@@ -21,13 +21,24 @@
 		objectName.newKey = 'value';		Assigns a new key and its value to the object.
 		delete objectName.key;				Deletes the key.
 
+	Assigning methods:
+
+		let object = {
+			funcName () {
+				code here
+			}
+		};
+
 */
 
 	// Example 1 - Creating an object literal:
 	let bike = {
-		brand: 'Triumph',		// "brand" and "model" are properties.
+		brand: 'Triumph',			// <brand> is a property.
 		model: 'Tiger 900 Rally',
 		'Fuel Type': 'Gas',
+		roar () {
+			console.log('I\'m the speed!');
+		}
 	}
 	
 	bike.brand;						// Returns 'Triumph'.
@@ -37,5 +48,6 @@
 	bike.motorSize = '900cc';		// Assigns <motorSize> as a new key and '900cc' as its value.
 	delete bike['Fuel Type'];		// Deletes <Fuel Type> key.
 	console.log(bike);
+	bike.roar();
 
 	
