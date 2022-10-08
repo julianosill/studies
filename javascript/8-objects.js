@@ -87,5 +87,9 @@
 	let paintHouse = (obj, newColor) => {
 		obj.color = newColor;
 	}
-	paintHouse(house, 'blue');
+	paintHouse(house, 'blue');		// Changes the color to 'blue'.
+	let garage = (obj, value) => {
+		obj.garage = value;
+	}
+	garage(house, true);			// Adds a key <garage> with <true> as its value.
 	console.log(house);
