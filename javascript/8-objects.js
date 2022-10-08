@@ -69,3 +69,23 @@
 	car.model = {type: 'Hatch', year: 2007};		// Adds another object <model> with properties <type> and <year>.
 	console.log(car);
 	console.log(car.model.year);
+
+
+
+/*	PASS BY REFERENCE
+
+	Objects are passed by reference. This means when we pass a variable assigned to an object into a function as an argument, the computer interprets the parameter name as pointing to the space in memory holding that object.
+	As a result, functions which change object properties actually mutate the object permanently (even when the object is assigned to a const variable).
+
+*/
+
+	// Example 3
+	const house = {
+		floors: 1,
+		color: 'red',
+	}
+	let paintHouse = (obj, newColor) => {
+		obj.color = newColor;
+	}
+	paintHouse(house, 'blue');
+	console.log(house);
