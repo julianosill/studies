@@ -93,3 +93,37 @@
 	}
 	garage(house, true);			// Adds a key <garage> with <true> as its value.
 	console.log(house);
+
+
+
+/*	LOOPING THROUGH OBJECTS
+
+	<for...in> executes a block of code for each property in an object.
+
+	Syntax:
+
+		for(let varName in object.property) {
+		}
+
+*/
+
+	// Example 4
+	let dragons = {
+		dragonsDance: {
+			balerion: {
+				name: 'Balerion',
+				rider: 'Aegon'
+			},
+			caraxes: {
+				name: 'Caraxes',
+				rider: 'Daemon'
+			},
+			syrax: {
+				name: 'Syrax',
+				rider: 'Rhaenyra'
+			},
+		}
+	};
+	for (let dragon in dragons.dragonsDance) {
+		console.log(`${dragons.dragonsDance[dragon].name} - Rider: ${dragons.dragonsDance[dragon].rider}`);
+	}
