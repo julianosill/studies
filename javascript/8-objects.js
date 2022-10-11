@@ -112,7 +112,10 @@
 		dragonsDance: {
 			balerion: {
 				name: 'Balerion',
-				rider: 'Aegon'
+				rider: 'Aegon',
+				command() {
+					console.log(this.name + ', Dracarys!');		// <this> keyword refers to the <balerion> property.
+				},
 			},
 			caraxes: {
 				name: 'Caraxes',
@@ -127,3 +130,7 @@
 	for (let dragon in dragons.dragonsDance) {
 		console.log(`${dragons.dragonsDance[dragon].name} - Rider: ${dragons.dragonsDance[dragon].rider}`);
 	}
+
+
+	// Example 5: <this> keyword
+	dragons.dragonsDance.balerion.command();
