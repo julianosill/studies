@@ -140,7 +140,7 @@
 /*	PRIVACY IN OBJECTS AND PROPERTIES
 
 	There are cases in which accessing and updating the property is not the best option.
-	A commonn convention is place an underscord <_> before the name of the property. It'd mean this property shouldn't be altered.
+	A commonn convention is place an underscore <_> before the name of the property. It'd mean this property shouldn't be altered.
 
 */
 
@@ -148,5 +148,59 @@
 	const bankAcc = {
 		_amount: 500,
 	}
-
 	bankAcc._amount;		// Returns 500.
+
+
+
+/*	GETTERS AND SETTERS
+
+	Getters are methods that get and return the internal properties of an object.
+
+		Syntax:
+
+			const objectName = {
+				_propertyPrivate = 'value',
+				get propertyPrivate() {
+					return this._propertyPrivate;
+				}
+			}
+
+	Setters reassigns values of existing properties.
+
+		Syntax:
+
+			const objectName = {
+					_propertyPrivate = 'value',
+					set propertyPrivate(newValue) {
+						this._propertyPrivate = newValue;
+					}
+				}
+
+*/
+
+	// Example 7:
+	const paypalAccount = {
+		_amount: 50,
+		_credit: 100,
+		get amount() {
+			if(typeof this._amount === 'number' && this._amount > 0) {		// Checks if the currency is a number and if is more then 0.
+				return 'Your current balance is ' + this._amount;
+			} else {
+				return 'You have no money';
+			}
+		},
+		get credit() {
+			return this._credit;
+		},
+		set credit(newCredit) {
+			if(typeof newCredit === 'number') {
+				this._credit = newCredit;
+			} else {
+				console.log('Must be a number.');
+			}
+		}
+	}
+	console.log(paypalAccount.amount);		// Prints the <get> amount().
+	console.log(paypalAccount.credit);		// Prints the <get> credit().
+	paypalAccount.credit = 150;				// Updates the value of credit().
+	console.log(paypalAccount.credit);		// Prints the <get> credit() after updating its value.
