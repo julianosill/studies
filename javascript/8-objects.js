@@ -50,7 +50,7 @@
 	console.log(bike);
 	bike.roar();
 
-	// Example 2 - Nested Objects
+	// Example 2 - Nested Objects:
 	let car = {
 		engine: {
 			size: '1.6L',
@@ -79,7 +79,7 @@
 
 */
 
-	// Example 3
+	// Example 3:
 	const house = {
 		floors: 1,
 		color: 'red',
@@ -107,7 +107,7 @@
 
 */
 
-	// Example 4
+	// Example 4 - Looping:
 	let dragons = {
 		dragonsDance: {
 			balerion: {
@@ -115,7 +115,7 @@
 				rider: 'Aegon',
 				command() {
 					console.log(this.name + ', Dracarys!');		// <this> keyword refers to the <balerion> property.
-				},
+				},												// It must be avoided using arrow function when using <this> in a method, because <this> refers to a global object in the global scope.
 			},
 			caraxes: {
 				name: 'Caraxes',
@@ -132,5 +132,21 @@
 	}
 
 
-	// Example 5: <this> keyword
+	// Example 5 - <this> keyword:
 	dragons.dragonsDance.balerion.command();
+
+
+
+/*	PRIVACY IN OBJECTS AND PROPERTIES
+
+	There are cases in which accessing and updating the property is not the best option.
+	A commonn convention is place an underscord <_> before the name of the property. It'd mean this property shouldn't be altered.
+
+*/
+
+	// Example 6 - Private property:
+	const bankAcc = {
+		_amount: 500,
+	}
+
+	bankAcc._amount;		// Returns 500.
