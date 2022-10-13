@@ -264,5 +264,31 @@
 			console.log('Aerlevsedi!');
 		}
 	}
-	const shout = elodin.shout;
+	const shout = elodin.shout;		// Assign to <shout> the function <shout()> inside of <elodin>.
 	shout();
+
+
+
+/*	BUILT-IN OBJECT METHODS
+
+	Some examples:
+	Object.assign()			Copies the values of all enumerable own properties from one or more source objects to a target object.
+	Object.entries()		Returns an array containing all of the [key, value] pairs of a given object's own enumerable string properties.
+	Object.keys()			Returns an array containing the names of all of the given object's own enumerable string properties.
+	Object.seal()			Prevents other code from deleting properties of an object.
+	Object.values()			Returns an array containing the values that correspond to all of a given object's own enumerable string properties.
+
+*/
+
+	// Example 11 - Built-in object methods:
+	const elodinKeys = Object.keys(elodin);
+	console.log(elodinKeys);
+
+	const elodinEntries = Object.entries(elodin);
+	console.log(elodinEntries);
+
+	const elodinAge = {
+		age: 35
+	}
+	const elodinWithAge = Object.assign(elodin, elodinAge);
+	console.log(elodinWithAge);
