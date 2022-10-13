@@ -236,3 +236,21 @@
 	const	squirtle = createPokemon('Squirtle', 'Water', 'Medium'),
 			charizard = createPokemon('Charizard', 'Fire', 'Large');
 	console.log(charizard);
+
+
+
+/*	PROPERTY VALUE SHORTHAND
+
+	Destructuring is a technique to make is easier and fast to assign values in a function.
+
+*/
+
+	// Example 9:
+	const createChar = (nickname, job) => {
+		return {
+			nickname,
+			job
+		}
+	}
+	const kvothe = createChar('Kvothe', 'Bard', '15');
+	console.log(kvothe);
