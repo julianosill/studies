@@ -204,3 +204,35 @@
 	console.log(paypalAccount.credit);		// Prints the <get> credit().
 	paypalAccount.credit = 150;				// Updates the value of credit().
 	console.log(paypalAccount.credit);		// Prints the <get> credit() after updating its value.
+
+
+/*	FACTORY FUNCTIONS
+
+	A factory function is a function that returns an object and can be reused to make multiple object instances.
+	Factory functions can also have parameters allowing us to customize the object that gets returned.
+
+	Syntax:
+
+		const createObj = (paramOne, paramTwo, paramThree) => {
+			return {
+				keyOne: paramOne,
+				keyTwo: paramTwo,
+				keyThree() {
+					console.log(paramThree);
+				}
+			}
+		}
+
+*/
+
+	// Example 8 - Creating a factory function:
+	const createPokemon = (name, element, size) => {
+		return {
+			name: name,
+			element: element,
+			size: size
+		}
+	}
+	const	squirtle = createPokemon('Squirtle', 'Water', 'Medium'),
+			charizard = createPokemon('Charizard', 'Fire', 'Large');
+	console.log(charizard);
