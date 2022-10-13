@@ -242,6 +242,7 @@
 /*	PROPERTY VALUE SHORTHAND
 
 	Destructuring is a technique to make is easier and fast to assign values in a function.
+	In destructured assignment we create a variable with the name of an object’s key that is wrapped in curly braces <{}> and assign to it the object.
 
 */
 
@@ -254,3 +255,14 @@
 	}
 	const kvothe = createChar('Kvothe', 'Bard', '15');
 	console.log(kvothe);
+
+	// Example 10 - Desctructured assignment:
+	const elodin = {
+		name: 'Elodin',
+		job: 'Master Namer',
+		shout() {
+			console.log('Aerlevsedi!');
+		}
+	}
+	const shout = elodin.shout;
+	shout();
