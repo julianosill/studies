@@ -70,3 +70,23 @@
 
 		const newInstance = new ChildClass('Hello', 'World');	// Create a new instance.
 		console.log(newInstance.parentOne);						// The <ChildClass> has access to the <ParentClass> methods. Therefore, <newInstance.parentOne> acesses <ParentClass> getter and returns the value saved to the property.
+
+
+
+/*	STATIC METHODS
+
+	It's not available in individual instances. It's only possible to call static methods directly from the class.
+	
+*/
+
+	// Syntax:
+
+	class ParentClass {
+		constructor(parentOne) {
+			this._parentOne = parentOne;
+		}
+
+		static methodName() { // <static> is the keyword to create a static method inside the class.
+		}
+
+	}
