@@ -28,3 +28,29 @@
 		2. The browser’s runtime environment and the ES6 <import/export> syntax.
 
 */
+
+
+/*	IMPLEMENTING IN NODE
+
+	Every JavaScript file that runs in a Node environment is treated as a distinct module.
+	The functions and data defined within each module can be used by any other module, as long as those resources are properly exported and imported.
+
+*/
+
+	/* module.exports
+
+		<module.exports> is an object that is built-in to the Node.js runtime environment.
+		Other files can now import this object, and make use of these two functions.
+
+	*/
+
+		// Method 1 - Syntax:
+		function funcName(param) {		// The function <funcName> is declared.
+			return param;
+		}
+		module.exports.funcName = funcName;		// The already-defined function <funcName> is assigned to <module.exports.funcName>.
+
+		// Method 2 - Syntax:
+		module.exports.newFunc = function(newParam) {		// An alternative approach for exporting a function. The function is declared and assigned to <module.exports.newFunc>.
+			return newParam;
+		}
