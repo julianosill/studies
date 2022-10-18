@@ -61,8 +61,13 @@
 		It accepts a string as an argument. That string provides the file path to the module you would like to import.
 		When <require()> is used, the entire <module.exports> object is returned and stored in the variable that it's assigned.
 
+		Using Object Destructuring to be more selective.
+			There will be cases when you want to import only specifics function and not all of them.
+
 	*/
 
 		// Syntax:
 		const newModule = require('./newModule.js');		// './' is a relative path indicating that the file is stored in the same folder.
 		const anotherFunc = newModule.funcName(value);		// This variable calls the function stored in <newModule> variable which was created and stored in <newModule.js>.
+		const { funcName } = require('newModule.js');		// This way, <require()> will import only the <funcName> and you can use it as a normal function.
+															// It's not stored in a variable as in the example above.
