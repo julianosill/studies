@@ -37,7 +37,7 @@
 
 */
 
-	/* module.exports
+	/*	module.exports
 
 		<module.exports> is an object that is built-in to the Node.js runtime environment.
 		Other files can now import this object, and make use of these two functions.
@@ -54,3 +54,15 @@
 		module.exports.newFunc = function(newParam) {		// An alternative approach for exporting a function. The function is declared and assigned to <module.exports.newFunc>.
 			return newParam;
 		}
+
+	/*	require()
+
+		<require()> is another built-in o the Node.js.
+		It accepts a string as an argument. That string provides the file path to the module you would like to import.
+		When <require()> is used, the entire <module.exports> object is returned and stored in the variable that it's assigned.
+
+	*/
+
+		// Syntax:
+		const newModule = require('./newModule.js');		// './' is a relative path indicating that the file is stored in the same folder.
+		const anotherFunc = newModule.funcName(value);		// This variable calls the function stored in <newModule> variable which was created and stored in <newModule.js>.
