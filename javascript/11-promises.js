@@ -49,3 +49,22 @@
 	const orderSunglasses = () => new Promise(myExecutor);		// Create a function that returns a new promise constructed by passing <myExecutor()> into the Promise constructor.
 	const orderPromise = orderSunglasses();		// Assigns the returned value of <orderSunglasses()> to a new variable.
 	console.log(orderPromise);
+
+
+
+/*	THE NODE setTimeout() FUNCTION
+
+	<setTimeout()> is a Node API that uses callback functions to schedule tasks to be performed after a delay.
+	It has two parameters: a callback function and a delay in milliseconds.
+
+	Syntax:
+
+		setTimeout(functionName, 1000);
+		first parameter		It's the name of the function that <setTimeout()> will invoke.
+		second parameter	It's the time <setTimeout()> waits before invoking the function.
+
+*/
+
+	// Example 2 - Setting a timeout:
+	const sayHello = () => console.log('Example 2: Hello World!');
+	setTimeout(sayHello, 2000);
