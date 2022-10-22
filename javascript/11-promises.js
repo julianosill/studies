@@ -33,3 +33,19 @@
 			const firstPromise = new Promise(executorFunction);
 
 */
+
+	// Example 1:
+	const inventory = {
+		sunglasses: 50,
+		pants: 1088
+	};
+	const myExecutor = (resolve, reject) => {
+		if(inventory.sunglasses > 0) {		// Check if there's at least one product available.
+			resolve('Sunglasses order processed.');
+		} else {
+			reject('That item is sold out.');
+		}
+	};
+	const orderSunglasses = () => new Promise(myExecutor);		// Create a function that returns a new promise constructed by passing <myExecutor()> into the Promise constructor.
+	const orderPromise = orderSunglasses();		// Assigns the returned value of <orderSunglasses()> to a new variable.
+	console.log(orderPromise);
