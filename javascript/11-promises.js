@@ -81,6 +81,10 @@
 	The success callback is sometimes called the “success handler function” or the onFulfilled function.
 	The failure callback is sometimes called the “failure handler function” or the onRejected function.
 
+	Syntax:
+
+		functionCall(parameter).(sucessHandler, rejectHandler);
+
 */
 
 	// Example 3:
@@ -114,5 +118,19 @@
 		console.log(rejectReason);
 	}
 	
-	// Runs the function <checkInventory()> with <order> as its parameter (ordering 1 sunglass and 2 bags), then invokes the correct handler depending on its settling.
+	// Calls the function <checkInventory()> with <order> as its parameter (ordering 1 sunglass and 2 bags), then invokes the correct handler depending on its settling.
 	checkInventory(order).then(handleSuccess, handleFailure);
+
+
+
+/*	One way to write cleaner code is to follow a principle called separation of concerns.
+	Separation of concerns means organizing code into distinct sections each handling a specific task.
+	It enables us to quickly navigate our code and know where to look if something isn’t working.
+
+	The <.catch()> function takes only one argument, onRejected.
+	In the case of a rejected promise, this failure handler will be invoked with the reason for rejection.
+	Using <.catch()> accomplishes the same thing as using a <.then()> with only a failure handler.
+
+*/
+
+	checkInventory(order).then(handleSuccess).catch(handleFailure);		// It's the same as the calling above, but using <.catch()> to invoke the <handleFailure> instead of <.then()>.
