@@ -92,19 +92,21 @@
 	
 	const checkInventory = (order) => {
 		return new Promise((resolve, reject) => {
-			setTimeout(() => {
-				let inStock = order.every(item => inventoryTwo[item[0]] >= item[1]);
-				if (inStock) {
+			setTimeout(() => {	// <setTimeout()> is used to ensure that the <checkInventory()> promise settles asinchronously.
+				let inStock = order.every(item => inventoryTwo[item[0]] >= item[1]);	// Create a variable checking wether the item seleted is available or not.
+				if (inStock) {	// If the variable <inStock> is true, then runs <resolve>.
 					resolve(`Thank you. Your order was successful.`);
 				} else {
 					reject(`We're sorry. Your order could not be completed because some items are sold out.`);
 				}
-			}, 1500);
+			}, 2000);
 		})
 	};
 	
+	// Variable that orders sunglasses and bags.
 	const order = [['sunglasses', 1], ['bags', 2]];
-	
+
+	// When the Promise settles, invoke one of the handler below according to it.	
 	const handleSuccess = (resolvedValue) => {
 		console.log(resolvedValue);
 	}
@@ -112,4 +114,5 @@
 		console.log(rejectReason);
 	}
 	
+	// Runs the function <checkInventory()> with <order> as its parameter (ordering 1 sunglass and 2 bags), then invokes the correct handler depending on its settling.
 	checkInventory(order).then(handleSuccess, handleFailure);
