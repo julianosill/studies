@@ -34,7 +34,7 @@
 
 */
 
-	// Example 1:
+	//	Example 1:
 	const inventory = {
 		sunglasses: 50,
 		pants: 1088
@@ -65,6 +65,51 @@
 
 */
 
-	// Example 2 - Setting a timeout:
+	//	Example 2 - Setting a timeout:
 	const sayHello = () => console.log('Example 2: Hello World!');
-	setTimeout(sayHello, 2000);
+	setTimeout(sayHello, 1000);
+
+
+
+/*	CONSUMING PROMISES
+
+	The initial state of an asynchronous promise is <pending>, but we have a guarantee that it will settle.
+	Promise objects come with an aptly named <.then()> method. It allows us to say, “I have a promise, when it settles, then here’s what I want to happen…”
+	<.then()> is a higher-order function — it takes two callback functions as arguments. We refer to these callbacks as <handlers>.
+	When the promise settles, the appropriate handler will be invoked with that settled value.
+
+	The success callback is sometimes called the “success handler function” or the onFulfilled function.
+	The failure callback is sometimes called the “failure handler function” or the onRejected function.
+
+*/
+
+	// Example 3:
+	const inventoryTwo = {
+		sunglasses: 1900,
+		pants: 1088,
+		bags: 1344
+	};
+	
+	const checkInventory = (order) => {
+		return new Promise((resolve, reject) => {
+			setTimeout(() => {
+				let inStock = order.every(item => inventoryTwo[item[0]] >= item[1]);
+				if (inStock) {
+					resolve(`Thank you. Your order was successful.`);
+				} else {
+					reject(`We're sorry. Your order could not be completed because some items are sold out.`);
+				}
+			}, 1500);
+		})
+	};
+	
+	const order = [['sunglasses', 1], ['bags', 2]];
+	
+	const handleSuccess = (resolvedValue) => {
+		console.log(resolvedValue);
+	}
+	const handleFailure = (rejectReason) => {
+		console.log(rejectReason);
+	}
+	
+	checkInventory(order).then(handleSuccess, handleFailure);
