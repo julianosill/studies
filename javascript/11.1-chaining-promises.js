@@ -52,69 +52,59 @@
 			}, generateRandomDelay());
 		});
 	};
-		  
-		  const processPayment = (responseArray) => {
-			const order = responseArray[0];
-			const total = responseArray[1];
-			return new Promise ((resolve, reject) => {
-			 setTimeout(()=> {  
-			 let hasEnoughMoney = order.giftcardBalance >= total;
-			 // For simplicity we've omited a lot of functionality
-			 // If we were making more realistic code, we would want to update the giftcardBalance and the inventory
-			 if (hasEnoughMoney) {
-			   console.log(`Payment processed with giftcard. Generating shipping label.`);
-			   let trackingNum = generateTrackingNumber();
-			   resolve([order, trackingNum]);
-			 } else {
-			   reject(`Cannot process order: giftcard balance was insufficient.`);
-			 }
-			 
-		  }, generateRandomDelay());
-		   });
-		  };
-		  
-		  
-		  const shipOrder = (responseArray) => {
-			const order = responseArray[0];
-			const trackingNum = responseArray[1];
-			return new Promise ((resolve, reject) => {
-			 setTimeout(()=> {  
-			   resolve(`The order has been shipped. The tracking number is: ${trackingNum}.`);
-		  }, generateRandomDelay());
-		   });
-		  };
-		  
-		  
-		  // This function generates a random number to serve as a "tracking number" on the shipping label. In real life this wouldn't be a random number
-		  function generateTrackingNumber() {
-			return Math.floor(Math.random() * 1000000);
-		  }
-		  
-		  // This function generates a random number to serve as delay in a setTimeout() since real asynchrnous operations take variable amounts of time
-		  function generateRandomDelay() {
-			return Math.floor(Math.random() * 2000);
-		  }
-		  
-
-
-
-		  const order = {
-			items: [['sunglasses', 1], ['bags', 2]],
-			giftcardBalance: 79.82
-		  };
-		  
-		  checkInventory(order)
-		  .then((resolvedValueArray) => {
-			// Write the correct return statement here:
-			return processPayment(resolvedValueArray);
-		  })
-		  .then((resolvedValueArray) => {
-			// Write the correct return statement here:
-			return shipOrder(resolvedValueArray);
-		  })
-		  .then((successMessage) => {
-			console.log(successMessage);
-		  })
-		  .catch((errorMessage) => {
-			console.log(errorMessage);
-		  });
+	
+	const processPayment = (responseArray) => {
+		const order = responseArray[0];
+		const total = responseArray[1];
+		return new Promise ((resolve, reject) => {
+			setTimeout(()=> {
+				let hasEnoughMoney = order.giftcardBalance >= total;
+				if (hasEnoughMoney) {
+					console.log(`Payment processed with giftcard. Generating shipping label.`);
+					let trackingNum = generateTrackingNumber();
+					resolve([order, trackingNum]);
+				} else {
+					reject(`Cannot process order: giftcard balance was insufficient.`);
+				}
+			}, generateRandomDelay());
+		});
+	};
+	
+	const shipOrder = (responseArray) => {
+		const order = responseArray[0];
+		const trackingNum = responseArray[1];
+		return new Promise ((resolve, reject) => {
+			setTimeout(()=> {
+				resolve(`The order has been shipped. The tracking number is: ${trackingNum}.`);
+			}, generateRandomDelay());
+		});
+	};
+	
+	// This function generates a random number to serve as a "tracking number" on the shipping label. In real life this wouldn't be a random number
+	function generateTrackingNumber() {
+		return Math.floor(Math.random() * 1000000);
+	}
+	
+	// This function generates a random number to serve as delay in a setTimeout() since real asynchrnous operations take variable amounts of time
+	function generateRandomDelay() {
+		return Math.floor(Math.random() * 2000);
+	}
+	
+	const order = {
+		items: [['sunglasses', 1], ['bags', 2]],
+		giftcardBalance: 79.82
+	};
+	
+	checkInventory(order)
+	.then((resolvedValueArray) => {
+		return processPayment(resolvedValueArray);
+	})
+	.then((resolvedValueArray) => {
+		return shipOrder(resolvedValueArray);
+	})
+	.then((successMessage) => {
+		console.log(successMessage);
+	})
+	.catch((errorMessage) => {
+		console.log(errorMessage);
+	});
