@@ -50,15 +50,15 @@
 	const checkInventory = (order) => {		// The <order> parameter/variable stores the items that will be checked.
 		return new Promise ((resolve, reject) => {
 			setTimeout(()=> {
-				const itemsArr = order.items;	// Passes the items (keys/ and values) stored in <order> to a new array called <itemsArr>.
+				const itemsArr = order.items;	// Passes items (keys/ and values) stored in <order> to a new array called <itemsArr>.
 				let inStock = itemsArr.every(item => store[item[0]].inventory >= item[1]);	// Checks if the store has the same or more quantity of the items ordered, then creates a new array called <inStock>. <store[item[0]].inventory> refers to the <inventory> key of each first property (sunglasses, pants, bags) of the store. <item[1]> refers to the quantity of each item ordered.
-				if (inStock) {	// If all the conditions of <inStock> are met, runs the code below.
+				if (inStock) {	// If all conditions of <inStock> are met, runs the code below.
 					let total = 0;	// Declares the total variable starting with 0, as nothing was added to the order yet.
 					itemsArr.forEach(item => {
-						total += item[1] * store[item[0]].cost	// Iterates all the items ordered and then sum its value to the total cost. <item[1]> refers to quantity ordered and <store[item[0]].cost> refers to the cost of its unity.
+						total += item[1] * store[item[0]].cost	// Iterates all items ordered and then sum its value to the total cost. <item[1]> refers to quantity ordered and <store[item[0]].cost> refers to the cost of its unity.
 					});
 					console.log(`All of the items are in stock. The total cost of the order is ${total}.`);
-					resolve([order, total]);
+					resolve([order, total]);	// Resolves to an array. Which has the <order> (the same as <order>) and <total> (total cost of the order) values.
 				} else {
 					reject(`The order could not be completed because some items are sold out.`);
 				}
@@ -68,15 +68,15 @@
 	
 	// Creates a function to process the payment and generate a tracking number.
 	const processPayment = (responseArray) => {
-		const order = responseArray[0];
-		const total = responseArray[1];
+		const order = responseArray[0];	// Set <order> value as the first element of the <responseArray> parameter.
+		const total = responseArray[1];	// Set <total> value as the second element of the <responseArray> parameter.
 		return new Promise ((resolve, reject) => {
 			setTimeout(()=> {
-				let hasEnoughMoney = order.giftcardBalance >= total;	// Check if the giftcard has the amount needed for the order.
-				if (hasEnoughMoney) {
+				let hasEnoughMoney = order.giftcardBalance >= total;	// Checks if the giftcard has the amount needed for the order.
+				if (hasEnoughMoney) {	// If hasEnoughMoney is true, runs the code below.
 					console.log(`Payment processed with giftcard. Generating shipping label.`);
-					let trackingNum = generateTrackingNumber();	// Assign the function <generateTrackingNumber()> to <trackingNum>.
-					resolve([order, trackingNum]);
+					let trackingNum = generateTrackingNumber();	// Assigns the function <generateTrackingNumber()> to <trackingNum>.
+					resolve([order, trackingNum]);	// Resolves to an array, with the same <order> value and <trackingNum> as the second element.
 				} else {
 					reject(`Cannot process order: giftcard balance was insufficient.`);
 				}
@@ -86,8 +86,8 @@
 	
 	// Creates a function to ship the order and prints the tracking number.
 	const shipOrder = (responseArray) => {
-		const order = responseArray[0];
-		const trackingNum = responseArray[1];
+		const order = responseArray[0];	// Keep the <order> value from promises above as the first element of the <responseArray> parameter.
+		const trackingNum = responseArray[1];	// Set <trackingNum> value as the second element of the <responseArray> parameter.
 		return new Promise ((resolve, reject) => {
 			setTimeout(()=> {
 				resolve(`The order has been shipped. The tracking number is: ${trackingNum}.`);
@@ -98,16 +98,16 @@
 	// Creates an order to buy some items and uses the giftcard as a payment.
 	const order = {
 		items: [['sunglasses', 1], ['bags', 2]],	// Items selected for the order.
-		giftcardBalance: 79.82						// The amount that the giftcard used as a payment has.
+		giftcardBalance: 79.82	// The amount that the giftcard used as a payment has.
 	};
 	
 	// Invokes the function to check if the ordered items are available.
 	checkInventory(order)
 	.then((resolvedValueArray) => {
-		return processPayment(resolvedValueArray);	// If they are available, then invoke the <processPayment> function.
+		return processPayment(resolvedValueArray);	// If they are available, then invokes the <processPayment> function with the first promise's (checkInventory) resolved value.
 	})
 	.then((resolvedValueArray) => {
-		return shipOrder(resolvedValueArray);	// If the payment went smooth, invokes the <shipOrder> function.
+		return shipOrder(resolvedValueArray);	// If the payment went smooth, invokes the <shipOrder> function with the second promise's (processPayment) resolved value.
 	})
 	.then((successMessage) => {
 		console.log(successMessage);	// After every process above ran as expected, prints the message finishing the order.
