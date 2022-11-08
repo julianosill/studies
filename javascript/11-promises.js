@@ -134,3 +134,31 @@
 */
 
 	checkInventory(order).then(handleSuccess).catch(handleFailure);		// It's the same as the calling above, but using <.catch()> to invoke the <handleFailure> instead of <.then()>.
+
+
+
+/*	Promise.all()
+
+	To maximize efficiency we should use concurrency, multiple asynchronous operations happening together.
+	With promises, we can do this with the function <Promise.all()>.
+
+	<Promise.all()> accepts an array of promises as its argument and returns a single promise.
+
+	That single promise will settle in one of two ways:
+		
+		If every promise in the argument array resolves, the single promise returned from <Promise.all()> will resolve with an array containing the resolve value from each promise in the argument array.
+		If any promise from the argument array rejects, the single promise returned from <Promise.all()> will immediately reject with the reason that promise rejected. This behavior is sometimes referred to as failing fast.
+
+	Syntax:
+
+	Promise.all([returnsPromOne(), returnsPromTwo(), returnsPromThree()]);
+
+*/
+
+	// Example 4:
+	const checkOne = checkPromise('String One', 'String Two');
+	const checkTwo = checkPromise('String One', 'String Two');
+	
+	Promise.all([checkOne, checkTwo])
+	.then(successHandler)
+	.catch(rejectHandler);
