@@ -15,10 +15,17 @@
 		- If there’s a non-promise value returned from the function, it will return a promise resolved to that value;
 		- If a promise is returned from the function, it will simply return that promise.
 
+	The <await> keyword can only be used inside an async function.
+	<await> is an operator: it returns the resolved value of a promise.
+	Since promises resolve in an indeterminate amount of time, <await> halts, or pauses, the execution of our <async> function until a given promise is resolved.
+
 	Syntax:
 
 		async function myFunc() {
+			let resolvedValue = await myPromise();
 		};
+
+			<await> halts the execution until <myPromise()> is resolved and assign its resolved value to the variabel <resolvedValue>.
 
 */
 
