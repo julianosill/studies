@@ -65,3 +65,32 @@
 		
 		noAwait();	// Prints "Promise { <pending> }" because the <await> keyword was not declared to the variable <value>. The <console.log()> was executed before the promise had resolved.
 		yesAwait();	// Prints "Yay, I resolved!"
+
+	
+
+	/*	TRY...CATCH
+
+		When <.catch()> is used with a long promise chain, there is no indication of where in the chain the error was thrown.
+		This can make debugging challenging. With <async...await>, we use <try...catch> statements for error handling.
+		By using this syntax, not only are we able to handle errors in the same way we do with synchronous code, but we can also catch both synchronous and asynchronous errors. 
+
+		Syntax:
+
+			async function myFunc() {
+				try {
+
+				} catch(error) {
+
+				}
+			};
+
+		Since async functions return promises we can still use native promise’s <.catch()> with an async function.
+
+			Example:
+			let rejectedPromise = usingPromiseCatch();
+			rejectedPromise.catch((rejectValue) => {
+				console.log(rejectValue);
+			});
+
+
+	*/
