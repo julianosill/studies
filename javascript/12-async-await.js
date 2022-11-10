@@ -63,5 +63,5 @@
 			console.log(value);
 		}
 		
-		noAwait();	// Prints: Promise { <pending> }
-		yesAwait();	// Prints: Yay, I resolved!
+		noAwait();	// Prints "Promise { <pending> }" because the <await> keyword was not declared to the variable <value>. The <console.log()> was executed before the promise had resolved.
+		yesAwait();	// Prints "Yay, I resolved!"
