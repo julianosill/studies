@@ -92,5 +92,23 @@
 				console.log(rejectValue);
 			});
 
-
 	*/
+
+	/*	HANDLING INDEPENDENT PROMISES
+
+		If possible, we want to get started on each asynchronous operation as soon as possible!
+		Within our async functions we should still take advantage of <concurrency>, the ability to perform asynchronous actions at the same time.
+
+		Note: if we have multiple truly independent promises that we would like to execute fully in parallel, we must use individual <.then()> functions and avoid halting our execution with <await>.
+
+		Syntax:
+
+			async function concurrent() {
+				const firstPromise = firstAsyncThing();
+				const secondPromise = secondAsyncThing();
+				console.log(await firstPromise, await secondPromise);
+			}
+
+			Both promises are constructed without <await>, then <await> each resolution to print them to the console.
+
+*/
