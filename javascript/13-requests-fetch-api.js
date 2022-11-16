@@ -21,3 +21,40 @@
 	).then(jsonResponse => {									// After the previous <.then()> has finished without error, it takes <jsonResponse> which contains the returned <response.json()> object from previous <.then()> as its parameter and can now be handled.
 		// Code to execute with jsonResponse
 	});
+
+
+	// Example 2:
+	
+		// Information to reach API
+		const url = 'https://api.datamuse.com/words?sl=';
+		
+		// Selects page elements
+		const inputField = document.querySelector('#input');
+		const submit = document.querySelector('#submit');
+		const responseField = document.querySelector('#responseField');
+		
+		// Asynchronous function
+		const getSuggestions = () => {
+			const wordQuery = inputField.value;
+			const endpoint = `${url}${wordQuery}`;
+			
+			fetch(endpoint, {cache: 'no-cache'}).then(response => {
+				if (response.ok) {
+					return response.json();
+				}
+				throw new Error('Request failed!');
+			}).then(jsonResponse => {
+				renderResponse(jsonResponse);
+			})
+		}
+		
+		// Clears previous results and display results to webpage
+		const displaySuggestions = (event) => {
+			event.preventDefault();
+			while(responseField.firstChild) {
+				responseField.removeChild(responseField.firstChild);
+			}
+			getSuggestions();
+		};
+		
+		submit.addEventListener('click', displaySuggestions);
