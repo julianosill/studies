@@ -9,6 +9,22 @@
 
 		fetch('https://url.com/endpoint)
 
+	POST Syntax:
+
+		fetch('https://url.com/endpoint' , {					\
+			method: 'POST',										|	=> sends request
+			body: JSON.stringfy({id: '200'})					/
+		}).then(response => {
+			if (response.ok) {									\
+				return response.json();							|	=> converts response object to JSON
+			}													/
+			throw new Error('Request failed!);					\	=> handles errors
+		}, networdError => console.log(networkError.message)	/
+		).then(jsonResponse => {								\	=> handles success
+		});														/
+
+		The second argument (method and body) determines that this request is a POST request and what information will be sent to the API.
+
  */
 
 	// Example 1:
@@ -23,7 +39,7 @@
 	});
 
 
-	// Example 2:
+	// Example 2 - GET:
 	
 		// Information to reach API
 		const url = 'https://api.datamuse.com/words?sl=';
