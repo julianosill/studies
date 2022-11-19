@@ -74,3 +74,40 @@
 		};
 		
 		submit.addEventListener('click', displaySuggestions);
+
+
+
+//	ASYNC GET REQUESTS
+
+	const getData = async () => {
+		try {
+			const response = await fetch('https://url.com/endpoint');	// Sends request
+			if (response.ok) {											// Handles response if successful
+				const jsonResponse = await response.json();
+				// Code to execute
+			}
+			throw new Error('Request failed!');
+		} catch (error) {												// handles response if unsuccessful
+			console.log(error);
+		}
+	}
+
+
+
+//	ASYNC POST REQUESTS
+
+	const getData = async () => {
+		try {
+			const response = await fetch('https://url.com/endpoint', {		// Sends request
+				method: 'POST',
+				body: JSON.stringfy({id: 200})
+			})
+			if (response.ok) {												// Handles response if successful
+				const jsonResponse = await response.json();
+				// Code to execute
+			}
+			throw new Error('Request failed!');
+		} catch (error) {													// handles response if unsuccessful
+			console.log(error);
+		}
+	}
