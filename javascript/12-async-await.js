@@ -58,7 +58,7 @@
 		console.log(value);
 	};
 		
-	async function yesAwait() {
+	const yesAwait = async () => {
 		let value = await myPromise();
 		console.log(value);
 	}
