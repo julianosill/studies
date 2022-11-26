@@ -5,13 +5,20 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Stopwatch</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<main>
-		<h2 id="time">00:00:00</h2>
-		<button class="start-btn" onclick="start()">Start</button>
-		<button class="pause-btn" onclick="pause()">Pause</button>
-		<button class="stop-btn" onclick="stop()">Stop</button>
+	<main class="container">
+		<div class="stopwatch">
+			<div class="display">
+				<h2 id="time">00:00:00</h2>
+			</div>
+			<div class="button-list">
+				<button class="start-btn button" onclick="start()">Start</button>
+				<button class="pause-btn button" onclick="pause()">Pause</button>
+				<button class="stop-btn button" onclick="stop()">Stop</button>
+			</div>
+		</div>
 	</main>
 	<script src="script.js"></script>
 </body>
