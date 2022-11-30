@@ -3,6 +3,7 @@ let	sec = 0,
 	hr = 0,
 	interval,
 	isRunning = false;
+	addLapClicks = 0;
 
 // Digits starting with 01 instead of 1
 const formatDigit = (number) => {
@@ -58,7 +59,16 @@ const counter = () => {
 // Add laps
 const addLap = () => {
 	const	lapTime = document.getElementById('time').innerText,
+			ol = document.createElement('ol'),
 			li = document.createElement('li');
+	ol.className = 'laps-list';
 	li.innerHTML = lapTime;
-	document.getElementById('laps-list').appendChild(li);
+	if(addLapClicks == 0) {
+		document.querySelector('.laps').appendChild(ol);
+		document.querySelector('.laps-list').appendChild(li);
+	} else {
+		document.querySelector('.laps-list').appendChild(li);
+	};
+	addLapClicks++;
+	console.log(addLapClicks);
 }
