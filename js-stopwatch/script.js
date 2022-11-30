@@ -57,6 +57,8 @@ const counter = () => {
 
 // Add laps
 const addLap = () => {
-	let getTime = document.getElementById('time').innerText;
-	console.log(getTime);
+	const	lapTime = document.getElementById('time').innerText,
+			li = document.createElement('li');
+	li.innerHTML = lapTime;
+	document.getElementById('laps-list').appendChild(li);
 }
