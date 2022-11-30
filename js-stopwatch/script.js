@@ -63,7 +63,9 @@ const addLap = () => {
 			li = document.createElement('li');
 	ol.className = 'laps-list';
 	li.innerHTML = lapTime;
-	if(addLapClicks == 0) {
+	if(!isRunning) {
+		window.alert('Please, start the stopwatch first.');
+	} else if(addLapClicks == 0) {
 		document.querySelector('.laps').appendChild(ol);
 		document.querySelector('.laps-list').appendChild(li);
 	} else {
