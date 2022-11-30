@@ -17,7 +17,7 @@ const formatDigit = (number) => {
 const start = () => {
 	if(!isRunning) {
 		console.log('Start!');
-		interval = setInterval(counter, 10);
+		interval = setInterval(counter, 1000);
 	}
 	isRunning = true;
 }
@@ -27,7 +27,6 @@ const pause = () => {
 	console.log('Pause!');
 	clearInterval(interval);
 	isRunning = false;
-	console.log('Pause at: ' + document.getElementById('time').innerText);
 }
 
 // Stops the stopwatch
@@ -52,9 +51,12 @@ const counter = () => {
 		hr++;
 		min = 0;
 	}
-	second = formatDigit(sec);
-	minute = formatDigit(min);
-	hour = formatDigit(hr);
-	let currentTime = `${hour}:${minute}:${second}`;
+	let currentTime = `${formatDigit(hr)}:${formatDigit(min)}:${formatDigit(sec)}`;
 	document.getElementById('time').innerText=currentTime;
+}
+
+// Add laps
+const addLap = () => {
+	let getTime = document.getElementById('time').innerText;
+	console.log(getTime);
 }
