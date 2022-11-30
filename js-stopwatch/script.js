@@ -27,6 +27,7 @@ const pause = () => {
 	console.log('Pause!');
 	clearInterval(interval);
 	isRunning = false;
+	console.log('Pause at: ' + document.getElementById('time').innerText);
 }
 
 // Stops the stopwatch
@@ -34,9 +35,13 @@ const stop = () => {
 	console.log('Stop!');
 	clearInterval(interval);
 	isRunning = false;
+	sec = 0;
+	min = 0;
+	hr = 0;
 	document.getElementById('time').innerText='00:00:00';
 }
 
+// Counters from 0 to infinite until it's paused or stopped
 const counter = () => {
 	sec++;
 	if(sec==60) {
