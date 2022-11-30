@@ -1,8 +1,10 @@
-let sec = 0;
-let min = 0;
-let hr = 0;
-let interval;
+let	sec = 0,
+	min = 0,
+	hr = 0,
+	interval,
+	isRunning = false;
 
+// Digits starting with 01 instead of 1
 const formatDigit = (number) => {
 	if(number < 10) {
 		return '0' + number;
@@ -11,19 +13,27 @@ const formatDigit = (number) => {
 	}
 }
 
+// Starts the stopwatch
 const start = () => {
-	console.log('Start!');
-	interval = setInterval(counter, 1);
+	if(!isRunning) {
+		console.log('Start!');
+		interval = setInterval(counter, 10);
+	}
+	isRunning = true;
 }
 
+// Pauses the stopwatch
 const pause = () => {
 	console.log('Pause!');
 	clearInterval(interval);
+	isRunning = false;
 }
 
+// Stops the stopwatch
 const stop = () => {
 	console.log('Stop!');
 	clearInterval(interval);
+	isRunning = false;
 	document.getElementById('time').innerText='00:00:00';
 }
 
