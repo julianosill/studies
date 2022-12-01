@@ -59,18 +59,17 @@ const counter = () => {
 // Add laps
 const addLap = () => {
 	const	lapTime = document.getElementById('time').innerText,
-			ol = document.createElement('ol'),
-			li = document.createElement('li');
-	ol.className = 'laps-list';
+			li = document.createElement('li'),
+			lapsSection = document.querySelector('.laps'),
+			lapsList = document.querySelector('.laps-list');
 	li.innerHTML = lapTime;
 	if(!isRunning) {
 		window.alert('Please, start the stopwatch first.');
 	} else if(addLapClicks == 0) {
-		document.querySelector('.laps').appendChild(ol);
-		document.querySelector('.laps-list').appendChild(li);
+		lapsSection.classList.add('active');
+		lapsList.appendChild(li);
+		addLapClicks++;
 	} else {
-		document.querySelector('.laps-list').appendChild(li);
+		lapsList.appendChild(li);
 	};
-	addLapClicks++;
-	console.log(addLapClicks);
 }
