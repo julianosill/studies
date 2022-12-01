@@ -80,6 +80,12 @@ const addLap = () => {
 const addClearButton = () => {
 	const divButton = document.createElement('div');
 	divButton.className = 'clear-laps';
-	divButton.innerHTML = '<button class="clear-btn button">Clear laps</button>';
+	divButton.innerHTML = '<button class="clear-btn button" onclick="clearLaps()">Clear laps</button>';
 	document.querySelector('.laps').appendChild(divButton);
+}
+
+// Create a function to clear the laps
+const clearLaps = () => {
+	const lapsSection = document.querySelector('.laps');
+	lapsSection.remove();
 }
