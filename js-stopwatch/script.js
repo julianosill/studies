@@ -68,8 +68,17 @@ const addLap = () => {
 	} else if(addLapClicks == 0) {
 		lapsSection.classList.add('active');
 		lapsList.appendChild(li);
+		addClearButton();
 		addLapClicks++;
 	} else {
 		lapsList.appendChild(li);
 	};
+}
+
+// Create a clear laps button
+const addClearButton = () => {
+	const divButton = document.createElement('div');
+	divButton.className = 'clear-laps';
+	divButton.innerHTML = '<button class="clear-btn button">Clear laps</button>';
+	document.querySelector('.laps').appendChild(divButton);
 }
