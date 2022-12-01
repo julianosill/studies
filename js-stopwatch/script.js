@@ -62,6 +62,7 @@ const addLap = () => {
 			li = document.createElement('li'),
 			lapsSection = document.querySelector('.laps'),
 			lapsList = document.querySelector('.laps-list');
+	li.className = 'lap-time';
 	li.innerHTML = lapTime;
 	if(!isRunning) {
 		window.alert('Please, start the stopwatch first.');
