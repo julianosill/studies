@@ -56,36 +56,39 @@ const counter = () => {
 	document.getElementById('time').innerText=currentTime;
 }
 
+// Create variables for add laps function
+const	laptimeSection = document.querySelector('.laptime-section'),
+		laptimeList = document.querySelector('.laptime-list');
+
 // Add laps
 const addLap = () => {
-	const	lapTime = document.getElementById('time').innerText,
-			li = document.createElement('li'),
-			lapsSection = document.querySelector('.laps'),
-			lapsList = document.querySelector('.laps-list');
-	li.className = 'lap-time';
-	li.innerHTML = lapTime;
+	const	laptime = document.getElementById('time').innerText,
+			li = document.createElement('li');
+	li.className = 'laptime-item';
+	li.innerHTML = laptime;
 	if(!isRunning) {
 		window.alert('Please, start the stopwatch first.');
 	} else if(addLapClicks == 0) {
-		lapsSection.classList.add('active');
-		lapsList.appendChild(li);
+		laptimeSection.classList.add('active');
+		laptimeList.appendChild(li);
 		addClearButton();
 		addLapClicks++;
 	} else {
-		lapsList.appendChild(li);
+		laptimeList.appendChild(li);
 	};
 }
 
 // Create a clear laps button
 const addClearButton = () => {
 	const divButton = document.createElement('div');
-	divButton.className = 'clear-laps';
-	divButton.innerHTML = '<button class="clear-btn button" onclick="clearLaps()">Clear laps</button>';
-	document.querySelector('.laps').appendChild(divButton);
+	divButton.className = 'clear-laptime';
+	divButton.innerHTML = '<button class="clear-btn button" onclick="clearLaptime()">Clear laps</button>';
+	laptimeSection.appendChild(divButton);
 }
 
 // Create a function to clear the laps
-const clearLaps = () => {
-	const lapsSection = document.querySelector('.laps');
-	lapsSection.remove();
+const clearLaptime = () => {
+	laptimeList.replaceChildren();
+	laptimeSection.classList.remove('active');
+	document.querySelector('.clear-laptime').remove();
 }
