@@ -1,3 +1,11 @@
+// Global variables
+const timeDisplay = document.getElementById('time');
+const startButton = document.getElementById('start-btn');
+const stopButton = document.getElementById('stop-btn');
+const resetButton = document.getElementById('reset-btn');
+const addLapButton = document.getElementById('add-laptime-btn');
+const clearLapButton = document.getElementById('clear-laptime-btn');
+
 let seconds = 0;
 let interval;
 let isRunning = false;
