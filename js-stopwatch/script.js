@@ -1,9 +1,7 @@
-let	sec = 0,
-	min = 0,
-	hr = 0,
-	interval,
-	isRunning = false;
-	addLapClicks = 0;
+let seconds = 0;
+let interval;
+let isRunning = false;
+let addLapClicks = 0;
 
 // Digits starting with 01 instead of 1
 const formatDigit = (number) => {
