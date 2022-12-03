@@ -12,15 +12,6 @@ let interval;
 let isRunning = false;
 let addLapClicks = 0;
 
-// Digits starting with 01 instead of 1
-const formatDigit = (number) => {
-	if(number < 10) {
-		return '0' + number;
-	} else {
-		return number;
-	}
-}
-
 // Counters from 0 to infinite until it's paused or stopped
 const counter = () => {
 	milliseconds++;
