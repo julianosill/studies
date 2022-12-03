@@ -6,7 +6,8 @@ const resetButton = document.getElementById('reset-btn');
 const addLapButton = document.getElementById('add-laptime-btn');
 const clearLapButton = document.getElementById('clear-laptime-btn');
 
-let seconds = 0;
+let milliseconds = 0;
+let seconds = milliseconds / 1000;
 let interval;
 let isRunning = false;
 let addLapClicks = 0;
@@ -18,6 +19,23 @@ const formatDigit = (number) => {
 	} else {
 		return number;
 	}
+}
+
+// Counters from 0 to infinite until it's paused or stopped
+const counter = () => {
+	milliseconds++;
+	
+	// Format time
+	let ms = milliseconds;
+	let secs = seconds % 60;
+	let mins = Math.floor(seconds / 60);
+	let hrs = Math.floor(seconds / 3600);
+
+	if(secs < 10) secs = '0' + secs;
+	if(mins < 10) mins = '0' + mins;
+	if(hrs < 10) hrs = '0' + hrs;
+
+	timeDisplay.innerText = `${hrs}:${mins}:${secs}:${ms}`;
 }
 
 // Starts the stopwatch
@@ -47,20 +65,7 @@ const stop = () => {
 	document.getElementById('time').innerText='00:00:00';
 }
 
-// Counters from 0 to infinite until it's paused or stopped
-const counter = () => {
-	sec++;
-	if(sec==60) {
-		min++;
-		sec = 0;
-	};
-	if(min==60) {
-		hr++;
-		min = 0;
-	}
-	let currentTime = `${formatDigit(hr)}:${formatDigit(min)}:${formatDigit(sec)}`;
-	document.getElementById('time').innerText=currentTime;
-}
+
 
 // Create variables for addLaptime functions
 const	laptimeSection = document.querySelector('.laptime-section'),
