@@ -32,28 +32,22 @@ const counter = () => {
 // Starts the stopwatch
 const start = () => {
 	if(!isRunning) {
-		console.log('Start!');
 		interval = setInterval(counter, 1000);
 	}
 	isRunning = true;
 }
 
-// Pauses the stopwatch
-const pause = () => {
-	console.log('Pause!');
+// Stops the stopwatch
+const stop = () => {
 	clearInterval(interval);
 	isRunning = false;
 }
 
-// Stops the stopwatch
-const stop = () => {
-	console.log('Stop!');
-	clearInterval(interval);
-	isRunning = false;
-	sec = 0;
-	min = 0;
-	hr = 0;
-	document.getElementById('time').innerText='00:00:00';
+// Resets the stopwatchs's time
+const reset = () => {
+	stop();
+	seconds = 0;
+	timeDisplay.innerText='00:00:00';
 }
 
 
@@ -101,3 +95,5 @@ const clearLaptimes = () => {
 
 // Event listeners
 startButton.addEventListener('click', start);
+stopButton.addEventListener('click', stop);
+resetButton.addEventListener('click', reset);
