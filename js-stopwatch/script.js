@@ -3,15 +3,14 @@ const timeDisplay = document.getElementById('time');
 const startButton = document.getElementById('start-btn');
 const stopButton = document.getElementById('stop-btn');
 const resetButton = document.getElementById('reset-btn');
-const addLapButton = document.getElementById('add-laptime-btn');
-const clearLapButton = document.getElementById('clear-laptime-btn');
+const laptimeSection = document.getElementById('laptime-section');
+const laptimeList = document.getElementById('laptime-list');
+const addLaptimeButton = document.getElementById('add-laptime-btn');
 
 let seconds = 0;
 let interval;
 let isRunning = false;
 let addLapClicks = 0;
-
-
 
 // Counters from 0 to infinite until it's paused or stopped
 const counter = () => {
@@ -50,18 +49,11 @@ const reset = () => {
 	timeDisplay.innerText='00:00:00';
 }
 
-
-
-// Create variables for addLaptime functions
-const	laptimeSection = document.querySelector('.laptime-section'),
-		laptimeList = document.querySelector('.laptime-list');
-
 // Add a laptime item
-const addLaptimeItem = () => {
-	const	li = document.createElement('li'),
-			laptime = document.getElementById('time').innerText;
-	li.className = 'laptime-item';
-	li.innerHTML = laptime;
+const addLaptimeLine = () => {
+	const li = document.createElement('li');
+	const laptime = document.getElementById('time').innerText;
+	li.innerHTML = `<span class="laptime-item">${laptime}</span>`;
 	laptimeList.appendChild(li);
 }
 
@@ -70,30 +62,32 @@ const addLap = () => {
 	if(!isRunning) {
 		window.alert('Please, start the stopwatch first.');
 	} else if(addLapClicks == 0) {
-		addLaptimeItem();
+		addLaptimeLine();
 		addClearButton();
 		addLapClicks++;
 	} else {
-		addLaptimeItem();
+		addLaptimeLine();
 	};
 }
 
 // Create a clear laptimes button
 const addClearButton = () => {
-	const div = document.createElement('div');
-	div.innerHTML = '<button class="clear-btn button" onclick="clearLaptimes()">Clear laptimes</button>';
-	laptimeSection.appendChild(div);
+	const button = document.createElement('button');
+	button.setAttribute('id', 'clear-laptime-btn');
+	button.setAttribute('onclick', 'clearLaptimes()');
+	button.innerHTML = 'Clear laptimes';
+	laptimeSection.appendChild(button);
 }
 
 // Create a function to clear the laps
 const clearLaptimes = () => {
 	laptimeList.replaceChildren();
-	document.querySelector('.clear-btn').remove();
+	document.getElementById('clear-laptime-btn').remove();
 	addLapClicks = 0;
 }
-
 
 // Event listeners
 startButton.addEventListener('click', start);
 stopButton.addEventListener('click', stop);
 resetButton.addEventListener('click', reset);
+addLaptimeButton.addEventListener('click', addLap);
