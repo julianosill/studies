@@ -8,18 +8,18 @@
 	<link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <body>
-	<main class="container">
+	<main class="container-sm text-center">
 		<div class="stopwatch">
-			<div class="display">
+			<div class="display text-center">
 				<h2 id="time">00:00:00</h2>
 			</div>
 			<div class="button-list">
-				<button id="start-btn">Start</button>
-				<button id="stop-btn">Stop</button>
-				<button id="reset-btn" >Reset</button>
+				<button id="start-btn" class="btn btn-primary">Start</button>
+				<button id="stop-btn" class="btn btn-outline-secondary">Stop</button>
+				<button id="reset-btn" class="btn btn-danger">Reset</button>
 			</div>
 			<section id="laptime-section">
-				<button id="add-laptime-btn">Add laptime</button>
+				<button id="add-laptime-btn" class="btn btn-outline-primary">Add laptime</button>
 				<ol id="laptime-list"></ol>
 			</section>
 		</div>
