@@ -75,6 +75,7 @@ const addClearButton = () => {
 	const button = document.createElement('button');
 	button.setAttribute('id', 'clear-laptime-btn');
 	button.setAttribute('onclick', 'clearLaptimes()');
+	button.classList.add('btn', 'btn-outline-danger');
 	button.innerHTML = 'Clear laptimes';
 	laptimeSection.appendChild(button);
 }
