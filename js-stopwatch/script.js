@@ -63,6 +63,7 @@ const addLap = () => {
 	if(!isRunning) {
 		window.alert('Please, start the stopwatch first.');
 	} else if(addLapClicks == 0) {
+		laptimeList.classList.add('p-4');
 		addLaptimeLine();
 		addClearButton();
 		addLapClicks++;
