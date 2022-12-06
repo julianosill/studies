@@ -85,6 +85,7 @@ const addClearButton = () => {
 // Create a function to clear the laps
 const clearLaptimes = () => {
 	laptimeList.replaceChildren();
+	laptimeList.classList.remove('p-4');
 	document.getElementById('clear-laptime-btn').remove();
 	addLapClicks = 0;
 }
