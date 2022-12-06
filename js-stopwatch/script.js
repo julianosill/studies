@@ -53,7 +53,8 @@ const reset = () => {
 const addLaptimeLine = () => {
 	const li = document.createElement('li');
 	const laptime = document.getElementById('time').innerText;
-	li.innerHTML = `<span class="laptime-item">${laptime}</span>`;
+	li.classList.add('list-group-item');
+	li.innerHTML = laptime;
 	laptimeList.appendChild(li);
 }
 
@@ -75,8 +76,8 @@ const addClearButton = () => {
 	const button = document.createElement('button');
 	button.setAttribute('id', 'clear-laptime-btn');
 	button.setAttribute('onclick', 'clearLaptimes()');
-	button.classList.add('btn', 'btn-outline-danger');
-	button.innerHTML = 'Clear laptimes';
+	button.classList.add('btn', 'btn-outline-danger', 'mt-3');
+	button.innerHTML = '<i class="bi bi-x"></i> Clear laptimes';
 	laptimeSection.appendChild(button);
 }
 
