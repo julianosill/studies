@@ -6,3 +6,4 @@ This is a repository containing all my documents and exercises that I've been cr
 ### Challenges
 
 - 1st: [Creating a stopwatch *(javascript)*](https://github.com/julianosill/studies/tree/master/js-stopwatch)
+- 2nd: [Finding the smallest word *(javascript)*](https://github.com/julianosill/studies/tree/master/js-smallestWord)
