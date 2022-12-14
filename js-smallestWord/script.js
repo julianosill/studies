@@ -4,12 +4,12 @@
 
 */
 
-const phrase = ' Lorem ipsum dolor sit amet at cravim do blat. ';
+const smallestWord = () => {
+	const string = document.getElementById('text-box').value;
+	
+	if(!string || typeof string !== 'string') return 'Please, write your phrase.';
 
-const smallestWord = (string) => {
-	if(!string || typeof string !== 'string') return 'Please, write your phrase.'
-
-	// .trim() remove any space in the beginning and end of the string | .split() separate the string in words and store in an array.
+	// .trim() remove any space in the beginning and ending of the string | .split() separate the string in words and store it in an array.
 	const wordsArray = string.trim().split(' ');
 
 	return wordsArray.reduce ((smallWord, current) => {
@@ -21,4 +21,10 @@ const smallestWord = (string) => {
 
 };
 
-console.log(smallestWord(phrase));
+const showResult = () => {
+	const resultedWord = document.getElementById('resulted-word');
+	resultedWord.innerText = smallestWord();
+}
+
+const findButton = document.getElementById('find-btn');
+findButton.addEventListener('click', showResult);
