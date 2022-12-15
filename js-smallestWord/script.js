@@ -4,27 +4,23 @@
 
 */
 
-const smallestWord = () => {
+const findSmallestWord = () => {
 	const string = document.getElementById('text-box').value;
+	const resultedWord = document.getElementById('resulted-word');
 	
-	if(!string || typeof string !== 'string') return 'Please, write your phrase.';
-
-	// .trim() remove any space in the beginning and ending of the string | .split() separate the string in words and store it in an array.
-	const wordsArray = string.trim().split(' ');
-
-	return wordsArray.reduce ((smallWord, current) => {
-		if(current.length < smallWord.length) {
-			return current;
-		}
-		return smallWord;
-	});
+	// check if the text-box is empty
+	if(!string || typeof string !== 'string') {
+		resultedWord.innerText = 'Please, write your phrase.';
+	} else {
+		// .trim() removes any space in the beginning and ending of the string | .split() separates the string in words and store it in an array.
+		const wordsArray = string.trim().split(' ');
+		const smallestWord = wordsArray.reduce ((smallWord, current) => {
+			return current.length < smallWord.length ? current : smallWord;
+		});
+		resultedWord.innerText = smallestWord;
+	};
 
 };
 
-const showResult = () => {
-	const resultedWord = document.getElementById('resulted-word');
-	resultedWord.innerText = smallestWord();
-}
-
 const findButton = document.getElementById('find-btn');
-findButton.addEventListener('click', showResult);
+findButton.addEventListener('click', findSmallestWord);
