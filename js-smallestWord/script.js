@@ -11,6 +11,8 @@ const findSmallestWord = () => {
 	// check if the text-box is empty
 	if(!string || typeof string !== 'string') {
 		resultedWord.innerText = 'Please, write your phrase.';
+	} else if(string.indexOf("  ") !== -1) {
+		resultedWord.innerText = 'There are two spaces between the words, please remove them first.';
 	} else {
 		// .trim() removes any space in the beginning and ending of the string | .split() separates the string in words and store it in an array.
 		const wordsArray = string.trim().split(' ');
