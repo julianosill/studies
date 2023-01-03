@@ -97,7 +97,7 @@
 	const checkInventory = (order) => {
 		return new Promise((resolve, reject) => {
 			setTimeout(() => {	// <setTimeout()> is used to ensure that the <checkInventory()> promise settles asinchronously.
-				let inStock = order.every(item => inventoryTwo[item[0]] >= item[1]);	// Create a variable checking wether the item seleted is available or not.
+				let inStock = order.every(item => inventoryTwo[item[0]] >= item[1]);	// Create a variable checking whether the item selected is available or not.
 				if (inStock) {	// If the variable <inStock> is true, then runs <resolve>.
 					resolve(`Thank you. Your order was successful.`);
 				} else {
