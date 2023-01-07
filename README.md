@@ -5,7 +5,8 @@ This is a repository containing all my documents and exercises that I've been cr
 
 ### Challenges
 
-- 1st: [Creating a stopwatch *(javascript)*](https://github.com/julianosill/studies/tree/master/js-stopwatch)
-- 2nd: [Finding the smallest word *(javascript)*](https://github.com/julianosill/studies/tree/master/js-smallestWord)
-- 3rd: [Creating a calculator *(javascript)*](https://github.com/julianosill/js-calculator)
-- 4th: [Javascript Entry Level - Technical Test *(close divs in a string)*](https://github.com/julianosill/js-clode-divs-test)
+- 1st: [Vanila JS Entry Level - Creating a stopwatch](https://github.com/julianosill/studies/tree/master/js-stopwatch)
+- 2nd: [Vanila JS Entry Level - Finding the smallest word](https://github.com/julianosill/studies/tree/master/js-smallestWord)
+- 3rd: [Vanila JS Entry Level - Creating a calculator](https://github.com/julianosill/js-calculator)
+- 4th: [Vanila JS Entry Level - Technical Test *(close divs in a string)*](https://github.com/julianosill/js-clode-divs-test)
+- 5th: [Vanila JS Entry Level - Basic Login Form](https://github.com/julianosill/js-basic-login-form)
